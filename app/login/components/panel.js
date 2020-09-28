@@ -1,7 +1,8 @@
 import React from 'react';
 import {  View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-
+import {  SignApple } from '../../utils/signApple';
+import { SignFacebook  } from '../../utils/login-facebook/loginFacebook'; 
 const windowWidth = Dimensions.get('window').width;     //  Constantes de medion de pantalla
 const windowHeight = Dimensions.get('window').height;
 
@@ -19,9 +20,9 @@ export default function Panel(props) {
              <Text style={{ fontSize: ( windowWidth * 7 )/100, fontWeight: 'bold' }}>Iniciar sesión</Text>
           </View>
             <View style={ Styles.body }>
-                        <View style={Styles.face}>
+                        <TouchableOpacity style={Styles.face}  onPress={ SignFacebook }>
                             <Text style={{ color: 'white', fontWeight: 'bold', fontSize: ( windowWidth * 4.3 )/100 }}>Con Facebook</Text>
-                        </View>
+                        </TouchableOpacity>
                         <LinearGradient
                             onTouchStart={ ()=> console.log('touch') }
                             colors={['#FFF00C', '#FEF68C']}
@@ -39,9 +40,9 @@ export default function Panel(props) {
                                     Con numero telefonico
                                 </Text>
                                 </LinearGradient>
-                        <View style={Styles.apple}>
+                        <TouchableOpacity style={Styles.apple} onPress={SignApple}>
                                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: ( windowWidth * 4.3 )/100 }}>Sign in with Apple</Text>
-                       </View>
+                       </TouchableOpacity>
                        
             </View>
             <View  style={{ width:'90%', height:0.8, backgroundColor: 'grey', marginTop: 20, }} />
