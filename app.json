@@ -18,7 +18,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "io.expo.client"
+      "bundleIdentifier": "com.puropollo.com",
+      "infoPlist": {
+       "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      }
+      
     },
     "web": {
       "favicon": "./assets/favicon.png"

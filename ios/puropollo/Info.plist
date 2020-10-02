@@ -52,7 +52,6 @@
     </array>
     <key>UIViewControllerBasedStatusBarAppearance</key>
     <false/>
-
     <key>UIRequiresFullScreen</key>
     <true/>
     <key>CFBundleURLTypes</key>
@@ -60,9 +59,14 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>io.expo.client</string>
+          <string>com.puropollo.com</string>
         </array>
       </dict>
+    </array>
+    <key>UIBackgroundModes</key>
+    <array>
+      <string>location</string>
+      <string>fetch</string>
     </array>
   </dict>
 </plist>

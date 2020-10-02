@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {  View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native';
+import * as Permissions from 'expo-permissions';
+
 import { FontAwesome } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient';
 import {  SwipeablePanel  } from 'rn-swipeable-panel';
 import Panel from './components/panel';
 
+import Constants from 'expo-constants';
+import * as Notifications from 'expo-notifications';
 const windowWidth = Dimensions.get('window').width;     //  Constantes de medion de pantalla
 const windowHeight = Dimensions.get('window').height;
+
 
 
 export default function SignIn(props) {
@@ -28,6 +33,18 @@ export default function SignIn(props) {
       const closePanel = () => {
         setIsPanelActive(false);
       };
+      
+      
+
+
+
+     
+
+
+    useEffect(() => {
+       
+    },[] )
+
      
 
     return(

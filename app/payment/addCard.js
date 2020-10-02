@@ -7,6 +7,27 @@ const windowHeight = Dimensions.get('window').height;
 
 
 export default function Addcard(){
+  
+    const [num_card, setnum_card] = useState('');
+    const [expiration, setexpiration] = useState('');
+    const [cvv, setcvv] = useState('');
+
+
+    const addNumcard = (e) => {
+        setnum_card(e.nativeEvent.text);
+
+    }
+
+    const addExpiration = (e) => {
+        setexpiration(e.nativeEvent.text);
+    }
+     
+    const addCvv = (e) => {
+        setcvv(e.nativeEvent.text);
+    }
+
+
+
     return(
         <KeyboardAwareScrollView  contentContainerStyle={{ flex: 1, alignItems: 'center'}}>
             <View style={ styles.title } >

@@ -1,5 +1,5 @@
-import React from 'react';
-import {  View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
+import React, {  useState } from 'react';
+import {  View, Text, StyleSheet, Dimensions, TouchableOpacity, TextInput } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {  SignApple } from '../../utils/signApple';
 import { SignFacebook  } from '../../utils/login-facebook/loginFacebook'; 
@@ -7,10 +7,16 @@ const windowWidth = Dimensions.get('window').width;     //  Constantes de medion
 const windowHeight = Dimensions.get('window').height;
 
 export default function Panel(props) {
-
+   
+    const [_URL, setURL] = useState('');
 
    const goToRegister = () => {
        props.data.navigate('RegisterTel'); 
+   }
+
+   const keyboard  = (e) => {
+      setURL(e.nativeEvent.text);
+      console.log(e.nativeEvent.text)
    }
 
 
@@ -40,7 +46,9 @@ export default function Panel(props) {
                                     Con numero telefonico
                                 </Text>
                                 </LinearGradient>
-                        <TouchableOpacity style={Styles.apple} onPress={SignApple}>
+
+                               
+                        <TouchableOpacity style={Styles.apple} onPress={SignApple(_URL)}>
                                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: ( windowWidth * 4.3 )/100 }}>Sign in with Apple</Text>
                        </TouchableOpacity>
                        

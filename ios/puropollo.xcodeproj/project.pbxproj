@@ -290,13 +290,13 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.expo.client";
-				PRODUCT_NAME = client;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puropollo.com";
+				PRODUCT_NAME = com;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				CODE_SIGN_ENTITLEMENTS = C:\Users\JafetDev\Documents\proyectos\react_native\puro_pollo\ios\puropollo\client.entitlements;
+				CODE_SIGN_ENTITLEMENTS = C:\Users\JafetDev\Documents\proyectos\react_native\puro_pollo\ios\puropollo\com.entitlements;
 			};
 			name = Debug;
 		};
@@ -315,12 +315,12 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.expo.client";
-				PRODUCT_NAME = client;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puropollo.com";
+				PRODUCT_NAME = com;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				CODE_SIGN_ENTITLEMENTS = C:\Users\JafetDev\Documents\proyectos\react_native\puro_pollo\ios\puropollo\client.entitlements;
+				CODE_SIGN_ENTITLEMENTS = C:\Users\JafetDev\Documents\proyectos\react_native\puro_pollo\ios\puropollo\com.entitlements;
 			};
 			name = Release;
 		};
@@ -381,7 +381,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				CODE_SIGN_ENTITLEMENTS = C:\Users\JafetDev\Documents\proyectos\react_native\puro_pollo\ios\puropollo\client.entitlements;
+				CODE_SIGN_ENTITLEMENTS = C:\Users\JafetDev\Documents\proyectos\react_native\puro_pollo\ios\puropollo\com.entitlements;
 			};
 			name = Debug;
 		};
@@ -435,7 +435,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				CODE_SIGN_ENTITLEMENTS = C:\Users\JafetDev\Documents\proyectos\react_native\puro_pollo\ios\puropollo\client.entitlements;
+				CODE_SIGN_ENTITLEMENTS = C:\Users\JafetDev\Documents\proyectos\react_native\puro_pollo\ios\puropollo\com.entitlements;
 			};
 			name = Release;
 		};

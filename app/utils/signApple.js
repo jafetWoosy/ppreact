@@ -1,6 +1,6 @@
 import * as AppleAuthentication from 'expo-apple-authentication';
 
-export const SignApple = async () => {
+export const SignApple = async (_URL) => {
 
    try {
        const credential = await  AppleAuthentication.signInAsync({
@@ -9,14 +9,30 @@ export const SignApple = async () => {
             AppleAuthentication.AppleAuthenticationScope.EMAIL
            ],
        });
+       const _URL = _URL;
+       const options = {
+        method: 'POST',
+        body: JSON.stringify({}),
+        headers: {
+         'Content-Type': 'application/json'
+        }
+        }  
+       try {
+        const result = await fetch(_URL,options);
+        const response  = result.json();
+        alert('RESPONSE:', response)
+       } catch (error) {
+        alert('error:', error)
+       }
        
-       console.log(credential);
-       console.log('------ERROR----------');
+       
    } catch (e) {
         if (e.code === "ERR_CANCELED") {
             console.log('+++++++ERROR++++++++');
             console.log(e);
             console.log('+++++++ERROR++++++++');
+            alert(credential);
+
         }
    }
 }
