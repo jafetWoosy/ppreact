@@ -1,8 +1,9 @@
 import React, { useEffect  } from 'react';
-import {  View , Text, StyleSheet, Image } from 'react-native';
+import {  View , Text, StyleSheet, Image, Dimensions } from 'react-native';
 
 
-
+const windowsHeight = Dimensions.get('screen').height;
+const windowsWidth = Dimensions.get('screen').width;
 
 
 export default function Login(props) {
@@ -22,10 +23,10 @@ export default function Login(props) {
 	return (
 		<View style={ styles.container }>
 			<View style={styles.logo_center }>
-			         <Image  source={ require('./../../assets/login/pollo.png') }  />
+			         <Image  source={ require('./../../assets/info/logopp.png') } style={{  width: ( windowsWidth * 80 )/100, height: ( windowsHeight * 20 )/100  }} resizeMode="contain"  />
 			</View>
 			  <View style={ styles.footer }>
-			      <Image  source={ require('../../assets/login/logo.png') }    style={{ width: 170, height: 50  }} resizeMode="contain"  />
+			      <Image  source={ require('../../assets/info/softom.png') }    style={{ width: 170, height: 50  }} resizeMode="contain"  />
 			  </View>
 		</View>
 		)

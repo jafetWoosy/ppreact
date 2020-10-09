@@ -20,16 +20,16 @@ export default function InfoStore(){
        </View>
            <View style={styles.types }>
              <View style={ styles.circle}>
-             <Image  source={ require('./../../assets/info/1.png') }  />
+             <Image  source={ require('./../../assets/info/1.png') }  style={{ width: 40, height: 40 }} tintColor="#fff" />
              </View>
              <View style={ styles.circle}>
-             <Image  source={ require('./../../assets/info/003-delivery-man.png') }  />
+             <Image  source={ require('./../../assets/info/delivery.png') }  style={{ width: 40, height: 40 }} tintColor="#fff" />
              </View>
              <View style={ styles.circle}>
-             <Image  source={ require('./../../assets/info/Outline.png') }  />
+             <Image  source={ require('./../../assets/info/parallevar.png') }  style={{ width: 40, height: 38 }} tintColor="#fff" />
              </View>
              <View style={ styles.circle}>
-             <Image  source={ require('./../../assets/info/credit-card.png') }  />
+             <Image  source={ require('./../../assets/info/payments.png') }  style={{ width: 40, height: 38 }} tintColor="#fff" />
              </View>
            </View>
            <View style={styles.body }>
@@ -61,9 +61,9 @@ const styles = StyleSheet.create({
 
     },
     circle: {
-        width: 50,
-        height: 50,
-        borderRadius: 50/2,
+        width: 55,
+        height: 55,
+        borderRadius: 55/2,
         backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: "center"

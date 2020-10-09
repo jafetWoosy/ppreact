@@ -156,7 +156,7 @@ const  AppTabsScreen = () => (
 
 
 export default () => {
-  const lo = true;
+  const lo = false;
   return (
     <NavigationContainer>
      {

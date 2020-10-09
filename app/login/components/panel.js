@@ -19,6 +19,11 @@ export default function Panel(props) {
       console.log(e.nativeEvent.text)
    }
 
+   const LoginFacebook = () => {
+      const { status   }  =   SignFacebook();
+      console.log(status);
+   }
+
 
     return(
         <View style={Styles.container}>
@@ -26,7 +31,7 @@ export default function Panel(props) {
              <Text style={{ fontSize: ( windowWidth * 7 )/100, fontWeight: 'bold' }}>Iniciar sesión</Text>
           </View>
             <View style={ Styles.body }>
-                        <TouchableOpacity style={Styles.face}  onPress={ SignFacebook }>
+                        <TouchableOpacity style={Styles.face}  onPress={ LoginFacebook }>
                             <Text style={{ color: 'white', fontWeight: 'bold', fontSize: ( windowWidth * 4.3 )/100 }}>Con Facebook</Text>
                         </TouchableOpacity>
                         <LinearGradient
@@ -48,7 +53,7 @@ export default function Panel(props) {
                                 </LinearGradient>
 
                                
-                        <TouchableOpacity style={Styles.apple} onPress={SignApple(_URL)}>
+                        <TouchableOpacity style={Styles.apple} onPress={SignApple}>
                                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: ( windowWidth * 4.3 )/100 }}>Sign in with Apple</Text>
                        </TouchableOpacity>
                        

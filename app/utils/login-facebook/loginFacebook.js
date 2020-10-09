@@ -11,19 +11,20 @@ export const SignFacebook = async () => {
   if (type === "success") {
     const _urlAuthFacebook = "https://testpuroporllo.herokuapp.com/app/auth/facebook";
 
-    // let tkn = { access_token: token }
-    // let options = {
-    //   method: 'POST',
-    //   body: JSON.stringify(tkn),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // }
+    let tkn = { access_token: token }
+    let options = {
+      method: 'POST',
+      body: JSON.stringify(tkn),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
       
-      // const response =  await fetch(_urlAuthFacebook, options);
-      // const datafinal = await response.json();
-      // console.log(datafinal);
-      console.log(token)
+      const response =  await fetch(_urlAuthFacebook, options);
+      const datafinal = await response.json();
+      return {  datafinal, status: true  }
+  }else {
+    return { status: false }
   }
 }
 
