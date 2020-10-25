@@ -5,15 +5,19 @@ import Navigation from './app/navigation/navigation';
 import Login from './app/login/login';
 import SignIn from './app/login/signIn';
 import ConfirmAddress from './app/address/ConfirmAddress';
-import './app//redux/store';
+import    {store} from   './app/redux/store';
 import {  Provider  } from 'react-redux';
 
 
 
 export default function App() { 
   return ( 
-     
+       <Provider store={store}>
        <Navigation/>
+       </Provider>
      
    );
 }
+
+
+

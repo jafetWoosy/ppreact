@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 import {  NavigationContainer   } from '@react-navigation/native';
 import {  createStackNavigator  } from '@react-navigation/stack';
 import {  createBottomTabNavigator   } from '@react-navigation/bottom-tabs';
-
+import {   useSelector } from 'react-redux'
 
 import Home from './../home/index';
 import Status from './../status/index';
@@ -129,9 +129,17 @@ const config = {
 
 
  //   TABS BOTTOM
+     
+ // colors of navigation
+ 
+ 
 
-const  AppTabsScreen = () => (
-    <AppTabs.Navigator
+
+
+const  AppTabsScreen = (props) => {
+    const { HOME, STATUS, STORE, PROFILE } = useSelector(state => state.colorsTabsReducer)
+    return(
+      <AppTabs.Navigator
      initialRouteName="Home"
      tabBarOptions={
       config
@@ -139,28 +147,31 @@ const  AppTabsScreen = () => (
      }
      >
      <AppTabs.Screen  name="Menú" component={HomeStackScreen}  options={{
-       tabBarIcon: (props)   => <Image source={ require('../../assets/home/pollohover.png') }  style={{ width:40, height:30 }}  resizeMode='contain' tintColor="#000" />
+       tabBarIcon: (props)   => <Image source={ require('../../assets/home/pollohover.png') }  style={{ width:40, height:30 }}  resizeMode='contain' tintColor={HOME} />
      }}/> 
      <AppTabs.Screen name="Status" component={StatusStackScren} options={{
-        tabBarIcon: (props)   => <Image source={ require('../../assets/home/status.png') }  style={{ width:40, height:30 }}  resizeMode='contain' tintColor="#000" />
+        tabBarIcon: (props)   => <Image source={ require('../../assets/home/status.png') }  style={{ width:40, height:30 }}  resizeMode='contain' tintColor={STATUS} />
       }}/>   
       
       <AppTabs.Screen  name="Store" component={StoreStackScreen } options={{ 
-        tabBarIcon: (props)   => <Image source={ require('../../assets/home/locations.png') }  style={{ width:40, height:30 }}  resizeMode='contain' tintColor="#000" />
+        tabBarIcon: (props)   => <Image source={ require('../../assets/home/locations.png') }  style={{ width:40, height:30 }}  resizeMode='contain' tintColor={STORE} />
       }} />
       <AppTabs.Screen name="Profile" component={ProfileStackScreen} options={{
-        tabBarIcon: (props)   => <Image source={ require('../../assets/home/profile.png') }  style={{ width:40, height:30 }}  resizeMode='contain' tintColor="#000" />
+        tabBarIcon: (props)   => <Image source={ require('../../assets/home/profile.png') }  style={{ width:40, height:30 }}  resizeMode='contain' tintColor={PROFILE} />
       }}/> 
     </AppTabs.Navigator>
-)
+    )
+    }
 
 
 export default () => {
-  const lo = false;
+  const { invited }  = useSelector(state => state.loginReducer);
+   const login_e = false;
+  
   return (
     <NavigationContainer>
      {
-       lo ? (<AppTabsScreen/>) : (<SignStackScreen/>)
+       invited ? (<AppTabsScreen/>) : (<SignStackScreen/>)
      }
     </NavigationContainer>
   )

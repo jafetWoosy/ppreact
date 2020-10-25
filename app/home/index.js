@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {  View, Dimensions, ScrollView, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons'
+import { FontAwesome, Ionicons } from '@expo/vector-icons'
 const windowWidth = Dimensions.get('window').width;     //  Constantes de medion de pantalla
 const windowHeight = Dimensions.get('window').height;
 import {  SwipeablePanel  } from 'rn-swipeable-panel';
 import Canasta from '../home/canasta'
 
+import {  store} from '../redux/store';
+import {  connect   } from 'react-redux';
 
-export default function Home(props){
+
+function Home(props){
 
   const {navigation} = props;
   const goToCart = () => {
@@ -34,6 +37,29 @@ export default function Home(props){
     setIsPanelActive(false);
   };
 
+
+   useEffect(() => {
+        
+     const unsubscribe = navigation.addListener('focus', () => {
+        SetColorTab();
+     });
+      
+     
+     
+
+    return unsubscribe;
+    
+    
+
+   }, [])
+  
+   const SetColorTab = () => {
+    store.dispatch({
+        type: "SCREEN_HOME"
+    })
+}
+
+
     return (
         <View style={styles.container }>
             <View style={styles.header}>
@@ -44,7 +70,7 @@ export default function Home(props){
                 </View>
                 <View>
                    <TouchableOpacity onPress={ OpenPanel } style={{ width: 70, height: '40%', backgroundColor: 'black', borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', }}>
-                    <FontAwesome name="shopping-cart" size={25} color="white" ></FontAwesome>       
+                    <Ionicons name="ios-cart" size={25} color="white" ></Ionicons>       
                    <Text style={{color: 'white', fontSize: 20}}>4</Text>
                    </TouchableOpacity> 
                 </View>
@@ -99,6 +125,18 @@ export default function Home(props){
         </View>
     )
 }
+
+
+
+
+const mapStateToProps = (state) => {
+    return{
+        state
+    }
+}
+
+
+export default connect(mapStateToProps)(Home);
 
 const styles = StyleSheet.create({
     container: {

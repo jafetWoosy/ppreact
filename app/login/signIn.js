@@ -7,6 +7,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {  SwipeablePanel  } from 'rn-swipeable-panel';
 import Panel from './components/panel';
 
+import {  connect   } from 'react-redux';
+
 import Constants from 'expo-constants';
 import * as Notifications from 'expo-notifications';
 const windowWidth = Dimensions.get('window').width;     //  Constantes de medion de pantalla
@@ -14,8 +16,9 @@ const windowHeight = Dimensions.get('window').height;
 
 
 
-export default function SignIn(props) {
-     const { navigation } = props;
+function SignIn(props) {
+     console.log(props)
+    const { navigation } = props;
     const [panelProps, setPanelProps] = useState({
         fullWidth: true,
         openLarge: true,
@@ -86,6 +89,23 @@ export default function SignIn(props) {
         </View>
     )
 }
+
+
+const mapStateToProps = (state) => {
+    return{
+        state
+    }
+}
+
+
+export default connect(mapStateToProps)(SignIn);
+
+
+
+
+
+
+
 
 const styles = StyleSheet.create({
     container: {

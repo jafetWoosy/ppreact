@@ -32,7 +32,7 @@ export default function Store(props){
                    arra_.map( element => {
                        return(
                            <>
-                        <TouchableOpacity style={{ width:'100%', height:(windowHeight * 10)/100,  flexDirection:'row' }} onPress={ goToInfo}>
+                        <TouchableOpacity style={{ width:'100%', height:(windowHeight * 10)/100,  flexDirection:'row' }} onPress={ goToInfo}key={element}>
                             <View style={{ width:"20%", height: '100%', backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
                             <Text>800mts</Text> 
                             </View>

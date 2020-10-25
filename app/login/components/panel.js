@@ -6,8 +6,10 @@ import { SignFacebook  } from '../../utils/login-facebook/loginFacebook';
 const windowWidth = Dimensions.get('window').width;     //  Constantes de medion de pantalla
 const windowHeight = Dimensions.get('window').height;
 
+import { store } from '../../redux/store';
+
 export default function Panel(props) {
-   
+    
     const [_URL, setURL] = useState('');
 
    const goToRegister = () => {
@@ -23,6 +25,15 @@ export default function Panel(props) {
       const { status   }  =   SignFacebook();
       console.log(status);
    }
+
+
+   const LoginInvited = () => {
+       store.dispatch({
+           type: "SET_LOGIN_INVITED"
+       })
+   }
+
+   
 
 
     return(
@@ -63,7 +74,7 @@ export default function Panel(props) {
                        <Text style={{ fontSize: ( windowWidth * 4.5 )/100, fontWeight: 'bold',  }}>Crear cuenta</Text>
                     </TouchableOpacity>
 
-                   <TouchableOpacity>
+                   <TouchableOpacity onPress={ LoginInvited }>
                    <Text style={{ fontSize: ( windowWidth * 4 )/100, color: '#5F5F5F', marginTop: 25, }}>Ingresar como invitado</Text>
                    </TouchableOpacity>
       </View>
