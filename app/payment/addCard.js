@@ -25,7 +25,10 @@ export default function Addcard(){
     const addCvv = (e) => {
         setcvv(e.nativeEvent.text);
     }
-
+    
+    const addNumtarjet = (e) => {
+        return e;
+    }
 
 
     return(
@@ -55,7 +58,7 @@ export default function Addcard(){
             <TextInput 
             style={{ height: (windowHeight * 4)/100,  width: '100%', fontSize: ( windowWidth*4 )/100, marginLeft: 5,   borderBottomColor: '#E5E5E5',
             borderBottomWidth: 0.5, }}
-            onChangeText={text => onChangeText(text)}
+            onChangeText={text => addNumtarjet(text)}
             placeholder="Ingresa el numero de tu tarjeta"
             placeholderTextColor="#E5E5E5"
             />
@@ -91,10 +94,7 @@ export default function Addcard(){
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-       
-    },
+    
     title: {
         alignItems: 'flex-start',
         justifyContent: 'center',

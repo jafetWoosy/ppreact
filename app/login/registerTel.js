@@ -59,14 +59,14 @@ export default function RegisterTel(props){
               
               <TouchableOpacity 
                onPress={ goToForm  }
-              style={{ height: (windowHeight * 8 )/100, width: '100%', alignItems: "center", marginTop: 60 }}>
+              style={{ height: "10%", width: '100%', alignItems: "center", marginTop: 60 }}>
               <LinearGradient
               onTouchStart={ ()=> console.log('touch') }
               colors={['#FFF00C', '#FEF68C']}
               start={[0.3, 0.5]}
               end={[1, 0.60]}
               location={[0.25, 0.4, 1]}
-              style={{  alignItems: 'center', borderRadius: 12, width: '90%', flexDirection: 'row', justifyContent: 'center', height:  (windowHeight * 8 )/100 , marginTop: 15 }}>
+              style={{  alignItems: 'center', borderRadius: 12, width: '90%', flexDirection: 'row', justifyContent: 'center', height:  (windowHeight * 6.8 )/100 , marginTop: 15 }}>
               <FontAwesome name="envelope" size={40} style={{ right: 20 }} />
                   <Text
                       style={{

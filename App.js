@@ -7,7 +7,7 @@ import SignIn from './app/login/signIn';
 import ConfirmAddress from './app/address/ConfirmAddress';
 import    {store} from   './app/redux/store';
 import {  Provider  } from 'react-redux';
-
+import Intro from './app/login/Intro';
 
 
 export default function App() { 

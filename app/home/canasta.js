@@ -39,10 +39,10 @@ export default function Canasta(props){
             </View>
            <View style={{ marginTop: 25, borderRadius: 15, width: "90%", height: '9%', backgroundColor: '#000', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', }}>
                <View style={{ backgroundColor: 'white', width: '12%', height: '60%', alignItems: 'center', justifyContent: 'center' }}>
-                 <Text style={{ fontSize: ( windowWidth * 6/ 100 ) }}>4</Text>
+                 <Text style={{ fontSize: ( windowWidth * 6/ 100 ) }}>1</Text> 
                </View> 
                 <TouchableOpacity onPress={ goToPayment }> 
-                <Text style={{ color: 'white', fontSize: ( windowWidth * 5) /100, left: 15 }}>Ir a pagar</Text>
+                <Text style={{ color: 'white', fontSize: ( windowWidth * 5) /100, left: 15 }}>Ir a pagarr</Text>
                 </TouchableOpacity>
                <Text style={{ color: 'white', fontSize: ( windowWidth * 4) /100 }}>$596.00</Text>
            </View>

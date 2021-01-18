@@ -19,27 +19,39 @@ export default function InfoStore(){
        />
        </View>
            <View style={styles.types }>
-             <View style={ styles.circle}>
-             <Image  source={ require('./../../assets/info/1.png') }  style={{ width: 40, height: 40 }} tintColor="#fff" />
-             </View>
-             <View style={ styles.circle}>
-             <Image  source={ require('./../../assets/info/delivery.png') }  style={{ width: 40, height: 40 }} tintColor="#fff" />
-             </View>
-             <View style={ styles.circle}>
-             <Image  source={ require('./../../assets/info/parallevar.png') }  style={{ width: 40, height: 38 }} tintColor="#fff" />
-             </View>
-             <View style={ styles.circle}>
-             <Image  source={ require('./../../assets/info/payments.png') }  style={{ width: 40, height: 38 }} tintColor="#fff" />
-             </View>
+                 <View style={{ flexDirection: "column",  alignItems: "center",  }}>
+                    <View style={ styles.circle}>
+                    <Image  source={ require('./../../assets/info/1.png') }  style={{ width: 40, height: 40, tintColor:"#fff" }}  resizeMode="contain" />
+                    </View>
+                    <Text style={ styles.txt }>Restaurante</Text>
+                 </View>
+                 <View style={{ flexDirection: "column", alignItems: "center", }}>
+                 <View style={ styles.circle}>
+                 <Image  source={ require('./../../assets/info/delivery.png')  }  style={{ width: 40, height: 40, tintColor:"#fff" }}  resizeMode="contain" />
+                 </View>
+                 <Text style={ styles.txt }>A domicilio</Text>
+              </View>
+              <View style={{ flexDirection: "column",  alignItems: "center",  }}>
+              <View style={ styles.circle}>
+              <Image  source={ require('./../../assets/info/parallevar.png') }  style={{ width: 40, height: 40, tintColor:"#fff" }}  resizeMode="contain" />
+              </View>
+              <Text style={ styles.txt } >Para llevar</Text>
+           </View>
+           <View style={{ flexDirection: "column",  alignItems: "center",  }}>
+           <View style={ styles.circle}>
+           <Image  source={ require('./../../assets/info/payments.png') }  style={{ width: 40, height: 40, tintColor:"#fff" }} resizeMode="contain" />
+           </View>
+           <Text style={ styles.txt }>Pago electronico</Text>
+        </View>
            </View>
            <View style={styles.body }>
               <Text style={{ fontSize: 21, fontWeight: 'bold' }}>Direccion:</Text>
-              <Text style={{ fontSize: (windowsWidth*4)/100 }}>Av Ejercito Mexicano 1007, Palos Prietos</Text>
+              <Text style={{ fontSize: (windowsWidth*4)/100, marginTop: 6 }}>Av Ejercito Mexicano 1007, Palos Prietos</Text>
               <Text>82010 Mazatlan, Sin.</Text>
               <Text style={{ marginTop: 15, fontSize: 21,fontWeight: 'bold' }}>Horarios:</Text>
-              <Text style={{ marginTop: 5 }}>lunes a Domingo: 10:00-18:00</Text>
+              <Text style={{ marginTop: 5 }}>Lunes a Domingo: 10:00-18:00</Text>
            </View> 
-           <View style={{ backgroundColor: '#000', width: '90%', height: '10%', marginTop: 25, borderRadius: 10, alignItems: 'center', justifyContent: 'center' }}>
+           <View style={styles.btn}>
               <Text style={{  fontSize: 20, color: "white", fontWeight: 'bold' }}>Abrir en mapas</Text>
            </View>
         </View>
@@ -47,23 +59,26 @@ export default function InfoStore(){
 }
 
 
+
+
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: "white"
     },
     types: {
         width: '100%',
          height: '15%',
           flexDirection: 'row',
           alignItems: 'center',
-          justifyContent: 'space-around'
-
+          justifyContent: 'space-around',
+          marginTop: 10
     },
     circle: {
-        width: 55,
-        height: 55,
-        borderRadius: 55/2,
+        width: 70,
+        height: 70,
+        borderRadius: 70/2,
         backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: "center"
@@ -71,9 +86,25 @@ const styles = StyleSheet.create({
     },
     body: {
         width:'90%',
-        height: '30%',
+        height: '20%',
         flexDirection: 'column',
+        marginTop: 40,
     
         
-    }
+    }, 
+    btn: {
+        marginTop: 60,
+        backgroundColor: 'black',
+        width: '90%',
+        height: '8%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 10,
+   },
+
+   txt: { 
+       marginTop: 5,
+       fontSize: 12
+   }
+    
 })

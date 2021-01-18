@@ -8,7 +8,7 @@ const FacebookApi = {
 export const SignFacebook = async () => {
   await Facebook.initializeAsync(FacebookApi.application_id);
   const { type, token } = await Facebook.logInWithReadPermissionsAsync({ permissions: FacebookApi.permissions })
-  if (type === "success") {
+  if (type === "success") {  
     const _urlAuthFacebook = "https://testpuroporllo.herokuapp.com/app/auth/facebook";
 
     let tkn = { access_token: token }
@@ -19,12 +19,14 @@ export const SignFacebook = async () => {
         'Content-Type': 'application/json'
       }
     }
-      
+       
       const response =  await fetch(_urlAuthFacebook, options);
-      const datafinal = await response.json();
-      return {  datafinal, status: true  }
+     
+      const final_token = await response.json();
+      console.log(final_token);
+      return {  final_token, status: true  }
   }else {
-    return { status: false }
+    return { status: false,  final_token: false }
   }
 }
 

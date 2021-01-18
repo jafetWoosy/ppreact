@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
 import MapView from 'react-native-maps';
+import {  store} from '../redux/store';
+import {  connect   } from 'react-redux';
 
 
-
-export default function Store(props){
+ function Store(props){
     const arra_ = [1,2,3,4,5,6,7,8,9,10]
+    const { navigation  } = props;
 
-     const goToInfo = () => {
-     const { navigation  } = props;
-      navigation.navigate('Info');
+
+     const goToInfo = () => {     
+       navigation.navigate('Info');
      }
+
+     const SetColorTab = () => {
+        store.dispatch({
+            type: "SCREEN_STORE"
+        })
+    }
+
+     useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            console.log('entraste ala pantalla');
+            SetColorTab();
+         });
+         return unsubscribe;
+     });
 
 
      return(
@@ -31,7 +47,7 @@ export default function Store(props){
                {
                    arra_.map( element => {
                        return(
-                           <>
+                           <View key={element}>
                         <TouchableOpacity style={{ width:'100%', height:(windowHeight * 10)/100,  flexDirection:'row' }} onPress={ goToInfo}key={element}>
                             <View style={{ width:"20%", height: '100%', backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
                             <Text>800mts</Text> 
@@ -42,7 +58,7 @@ export default function Store(props){
                         </View>
                      </TouchableOpacity>
                      <View  style={{ width: '100%', height: 1, backgroundColor: '#C7C7C7' }} />
-                     </>
+                     </View>
                        )
                    })
                }
@@ -51,8 +67,16 @@ export default function Store(props){
      )
 }
 
-const windowWidth = Dimensions.get('window').width;     //  Constantes de medion de pantalla
+const windowWidth = Dimensions.get('window').width;    
 const windowHeight = Dimensions.get('window').height;
+
+const mapStateToProps = (state) => {
+    return{
+        state
+    }
+}
+
+export default connect(mapStateToProps)(Store);
 
 const styles = StyleSheet.create({
     container: {

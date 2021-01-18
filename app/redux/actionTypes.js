@@ -10,3 +10,15 @@ export const SCREEN_HOME = "SCREEN_HOME";
 export const SCREEN_STATUS = "SCREEN_STATUS";
 export const SCREEN_STORE = "SCREEN_STORE";
 export const SCREEN_PROFILE = "SCREEN_PROFILE";
+export const TABVISIBLE = "TABVISIBLE";
+export const MODALVISIBLE = "MODALVISIBLE";
+export const MODALFALSE = "MODALFALSE";
+
+
+
+export const ADDPRODUCT = "ADDPRODUCT";
+export const DELETEPRODUCT = "DELETEPRODUCT";
+export const ADDEXTRA = "ADDEXTRA";
+export const ADDADDRESS = "ADDADDRESS";
+
+export const  SUMQUANTITY = "SUMQUANTITY";

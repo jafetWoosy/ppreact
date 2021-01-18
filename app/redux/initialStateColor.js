@@ -1,6 +1,8 @@
 export const initialStateColor = {
-     HOME: "grey",
-    STATUS: 'grey',
-     STORE: "grey",
-    PROFILE: 'grey',
+     HOME: "#D8D9DB",
+     STATUS: '#D8D9DB',
+     STORE: "#D8D9DB",
+     PROFILE: '#D8D9DB',
+     opacitytab: 20,
+     modalvisible: false
     }

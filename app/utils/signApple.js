@@ -31,8 +31,6 @@ export const SignApple = async () => {
             console.log('+++++++ERROR++++++++');
             console.log(e);
             console.log('+++++++ERROR++++++++');
-            alert(credential);
-
         }
    }
 }
